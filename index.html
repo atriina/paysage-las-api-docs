@@ -694,6 +694,173 @@
 var APIDATA = {api: [
   {
     "type": "POST",
+    "url": "/api/method/lms.user.aml_check",
+    "title": "AML Check (PMLA)",
+    "name": "AML_Check_(PMLA)",
+    "group": "AML",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "success",
+          "content": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"hit_count\": 0\n    }\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success 200",
+          "content": "{\"message\":\"Success\"}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Success",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "/home/frappe/uat-las/config/apidocs/apidoc.py",
+    "groupTitle": "AML",
+    "error": {
+      "fields": {
+        "Error 422": [
+          {
+            "group": "Error 422",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Validation Error",
+            "description": ""
+          },
+          {
+            "group": "Error 422",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": ""
+          },
+          {
+            "group": "Error 422",
+            "type": "String",
+            "optional": false,
+            "field": "errors.field_x",
+            "defaultValue": "field x error message",
+            "description": ""
+          }
+        ],
+        "Error 500": [
+          {
+            "group": "Error 500",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Something went wrong",
+            "description": ""
+          },
+          {
+            "group": "Error 500",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": ""
+          }
+        ],
+        "Error": [
+          {
+            "group": "Error",
+            "type": "String",
+            "optional": false,
+            "field": "errors.field_x",
+            "description": "<p>field_x error message</p>"
+          }
+        ],
+        "Error 401": [
+          {
+            "group": "Error 401",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Unauthorized",
+            "description": ""
+          }
+        ],
+        "Error 403": [
+          {
+            "group": "Error 403",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Forbidden",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error 422",
+          "content": "{\"message\":\"Validation Error\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        },
+        {
+          "title": "Error 500",
+          "content": "{\"message\":\"Something went wrong\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        },
+        {
+          "title": "Error 401",
+          "content": "{\"message\":\"Unauthorized\"}",
+          "type": "json"
+        },
+        {
+          "title": "Error 403",
+          "content": "{\"message\":\"Forbidden\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept",
+            "defaultValue": "application/json",
+            "description": ""
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "{{token}}",
+            "description": "<p>Bearer token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Mobile App Headers",
+          "content": "{\"Accept\":\"application/json\"}",
+          "type": "json"
+        },
+        {
+          "title": "User Authorization Header",
+          "content": "{\"Authorization\":\"Bearer kalsjdfklajsdkfj\"}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
     "url": "/api/method/lms.auth.login",
     "title": "Login",
     "name": "Login",
@@ -4729,6 +4896,200 @@ var APIDATA = {api: [
     "version": "0.0.0",
     "filename": "/home/frappe/uat-las/config/apidocs/apidoc.py",
     "groupTitle": "Cibil",
+    "error": {
+      "fields": {
+        "Error 422": [
+          {
+            "group": "Error 422",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Validation Error",
+            "description": ""
+          },
+          {
+            "group": "Error 422",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": ""
+          },
+          {
+            "group": "Error 422",
+            "type": "String",
+            "optional": false,
+            "field": "errors.field_x",
+            "defaultValue": "field x error message",
+            "description": ""
+          }
+        ],
+        "Error 500": [
+          {
+            "group": "Error 500",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Something went wrong",
+            "description": ""
+          },
+          {
+            "group": "Error 500",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": ""
+          }
+        ],
+        "Error": [
+          {
+            "group": "Error",
+            "type": "String",
+            "optional": false,
+            "field": "errors.field_x",
+            "description": "<p>field_x error message</p>"
+          }
+        ],
+        "Error 401": [
+          {
+            "group": "Error 401",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Unauthorized",
+            "description": ""
+          }
+        ],
+        "Error 403": [
+          {
+            "group": "Error 403",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Forbidden",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error 422",
+          "content": "{\"message\":\"Validation Error\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        },
+        {
+          "title": "Error 500",
+          "content": "{\"message\":\"Something went wrong\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        },
+        {
+          "title": "Error 401",
+          "content": "{\"message\":\"Unauthorized\"}",
+          "type": "json"
+        },
+        {
+          "title": "Error 403",
+          "content": "{\"message\":\"Forbidden\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept",
+            "defaultValue": "application/json",
+            "description": ""
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "{{token}}",
+            "description": "<p>Bearer token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Mobile App Headers",
+          "content": "{\"Accept\":\"application/json\"}",
+          "type": "json"
+        },
+        {
+          "title": "User Authorization Header",
+          "content": "{\"Authorization\":\"Bearer kalsjdfklajsdkfj\"}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/api/method/lms.user.verify_pan",
+    "title": "PAN Verification",
+    "name": "PAN_Verification",
+    "group": "KYC",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "pan",
+            "description": "<p>PAN Number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "dob",
+            "description": "<p>Date of Birth</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\n    \"pan\": \"BMNPT7719P\",\n    \"dob\": \"11/12/2000\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success",
+          "content": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"aadhaar_seeding_status\": \"y\",\n        \"name_as_per_pan_match\": true,\n        \"pan\": \"BMNPT7719P\",\n        \"category\": \"individual\",\n        \"status\": \"valid\",\n        \"date_of_birth_match\": false\n    }\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success 200",
+          "content": "{\"message\":\"Success\"}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Success",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "/home/frappe/uat-las/config/apidocs/apidoc.py",
+    "groupTitle": "KYC",
     "error": {
       "fields": {
         "Error 422": [
@@ -10343,6 +10704,388 @@ var APIDATA = {api: [
         {
           "title": "Error 500",
           "content": "{\"message\":\"Something went wrong\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/api/method/lms.user.mf_get_data",
+    "title": "MF Central Get Data",
+    "name": "MF_Central_Get_Data",
+    "group": "MF_Central",
+    "version": "1.0.0",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "otp",
+            "description": "<p>OTP</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "req_id",
+            "description": "<p>Req ID</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "otp_ref",
+            "description": "<p>OTP Reference</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "user_subject_reference",
+            "description": "<p>User Subject Reference</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "client_refno",
+            "description": "<p>Client Reference No</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Example",
+          "content": "{\n  \"otp\": \"413814\",\n  \"req_id\": 590658478,\n  \"otp_ref\": \"ab3b6c14-d392-4ce6-8611-787974b1c0ef\",\n  \"user_subject_reference\": \"\",\n  \"client_refno\": \"ac8bdbba-e526-4910-b376-908d69689135\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "success",
+          "content": "{\n    \"message\": \"success\",\n    \"data\": [\n        {\n            \"email\": \"jayantabghosh98@gmail.com\",\n            \"amc\": \"H\",\n            \"amcName\": \"HDFC Mutual Fund\",\n            \"folio\": \"29653875\",\n            \"scheme\": \"INFG\",\n            \"schemeName\": \"HDFC Infrastructure Fund - Regular Plan - Growth \",\n            \"kycStatus\": \"3\",\n            \"brokerCode\": \"ARN-0016\",\n            \"brokerName\": \"Bluechip Corporate Investment Centre Private limited\",\n            \"rtaCode\": \"CAMS\",\n            \"decimalUnits\": \"3\",\n            \"decimalAmount\": \"2\",\n            \"decimalNav\": \"3\",\n            \"lastTrxnDate\": \"13-JUN-2024\",\n            \"openingBal\": \"0.000\",\n            \"marketValue\": \"25804.66\",\n            \"nav\": \"48.702\",\n            \"closingBalance\": \"529.848\",\n            \"lastNavDate\": \"20-AUG-2024\",\n            \"isDemat\": \"N\",\n            \"assetType\": \"EQUITY\",\n            \"isin\": \"INF179K01GF8\",\n            \"nomineeStatus\": \"Y\",\n            \"taxStatus\": \"01\",\n            \"costValue\": \"25000\"\n        },\n        {\n            \"email\": \"jayantabghosh98@gmail.com\",\n            \"amc\": \"L\",\n            \"amcName\": \"SBI Mutual Fund\",\n            \"folio\": \"28790264\",\n            \"scheme\": \"017G\",\n            \"schemeName\": \"SBI Large & Midcap Fund Regular Growth (formerly SBI Magnum Multiplier Fund)\",\n            \"kycStatus\": \"3\",\n            \"brokerCode\": \"ARN0016\",\n            \"brokerName\": \"Bluechip Corporate Investment Centre Private limited\",\n            \"rtaCode\": \"CAMS\",\n            \"decimalUnits\": \"3\",\n            \"decimalAmount\": \"2\",\n            \"decimalNav\": \"4\",\n            \"lastTrxnDate\": \"25-JUL-2024\",\n            \"openingBal\": \"0.000\",\n            \"marketValue\": \"70731.58\",\n            \"nav\": \"599.5015\",\n            \"closingBalance\": \"117.984\",\n            \"lastNavDate\": \"20-AUG-2024\",\n            \"isDemat\": \"N\",\n            \"assetType\": \"EQUITY\",\n            \"isin\": \"INF200K01305\",\n            \"nomineeStatus\": \"Y\",\n            \"taxStatus\": \"01\",\n            \"costValue\": \"56000\"\n        },\n        {\n            \"email\": \"jayantbghosh98@gmail.com\",\n            \"amc\": \"L\",\n            \"amcName\": \"SBI Mutual Fund\",\n            \"folio\": \"37967277\",\n            \"scheme\": \"686G\",\n            \"schemeName\": \"SBI Energy Opportunities Fund- Regular Growth \",\n            \"kycStatus\": \"3\",\n            \"brokerCode\": \"ARN0016\",\n            \"brokerName\": \"Bluechip Corporate Investment Centre Private limited\",\n            \"rtaCode\": \"CAMS\",\n            \"decimalUnits\": \"3\",\n            \"decimalAmount\": \"2\",\n            \"decimalNav\": \"4\",\n            \"lastTrxnDate\": \"18-APR-2024\",\n            \"openingBal\": \"0.000\",\n            \"marketValue\": \"11099.21\",\n            \"nav\": \"11.5927\",\n            \"closingBalance\": \"957.431\",\n            \"lastNavDate\": \"20-AUG-2024\",\n            \"isDemat\": \"N\",\n            \"assetType\": \"EQUITY\",\n            \"isin\": \"INF200KB1092\",\n            \"nomineeStatus\": \"Y\",\n            \"taxStatus\": \"01\",\n            \"costValue\": \"10000\"\n        },\n        {\n            \"email\": \"jayantbghosh98@gmail.com\",\n            \"amc\": \"P\",\n            \"amcName\": \"ICICI Prudential Mutual Fund\",\n            \"folio\": \"33702891\",\n            \"scheme\": \"61\",\n            \"schemeName\": \"ICICI Prudential Equity & Debt Fund - Growth (formerly ICICI Prudential Balanced Fund)\",\n            \"kycStatus\": \"3\",\n            \"brokerCode\": \"ARN-0016\",\n            \"brokerName\": \"Bluechip Corporate Investment Centre Private limited\",\n            \"rtaCode\": \"CAMS\",\n            \"decimalUnits\": \"3\",\n            \"decimalAmount\": \"2\",\n            \"decimalNav\": \"2\",\n            \"lastTrxnDate\": \"12-JUN-2024\",\n            \"openingBal\": \"0.000\",\n            \"marketValue\": \"52708.36\",\n            \"nav\": \"372.94\",\n            \"closingBalance\": \"141.332\",\n            \"lastNavDate\": \"20-AUG-2024\",\n            \"isDemat\": \"N\",\n            \"assetType\": \"EQUITY\",\n            \"isin\": \"INF109K01480\",\n            \"nomineeStatus\": \"Y\",\n            \"taxStatus\": \"01\",\n            \"costValue\": \"50000\"\n        },\n        {\n            \"email\": \"jayantabghosh98@gmail.com\",\n            \"amc\": \"T\",\n            \"amcName\": \"Tata Mutual Fund\",\n            \"folio\": \"7203154\",\n            \"scheme\": \"DIFG\",\n            \"schemeName\": \"Tata Digital India Fund Regular Plan Growth \",\n            \"kycStatus\": \"3\",\n            \"brokerCode\": \"ARN-0016\",\n            \"brokerName\": \"Bluechip Corporate Investment Centre Private limited\",\n            \"rtaCode\": \"CAMS\",\n            \"decimalUnits\": \"3\",\n            \"decimalAmount\": \"2\",\n            \"decimalNav\": \"4\",\n            \"lastTrxnDate\": \"20-AUG-2024\",\n            \"openingBal\": \"0.000\",\n            \"marketValue\": \"41812.17\",\n            \"nav\": \"51.2254\",\n            \"closingBalance\": \"816.239\",\n            \"lastNavDate\": \"20-AUG-2024\",\n            \"isDemat\": \"N\",\n            \"assetType\": \"EQUITY\",\n            \"isin\": \"INF277K01Z44\",\n            \"nomineeStatus\": \"Y\",\n            \"taxStatus\": \"01\",\n            \"costValue\": \"29000\"\n        },\n        {\n            \"email\": \"jayantbghosh98@gmail.com\",\n            \"amc\": \"RMF\",\n            \"amcName\": \"Nippon India Mutual Fund\",\n            \"folio\": \"420330923776\",\n            \"scheme\": \"GFGPG\",\n            \"schemeName\": \"NIPPON INDIA GROWTH FUND - GROWTH PLAN GROWTH OPTION\",\n            \"kycStatus\": \"3\",\n            \"brokerCode\": \"ARN-0016\",\n            \"brokerName\": \"Bluechip Corporate Investment Centre Private limited\",\n            \"rtaCode\": \"KFINTECH\",\n            \"decimalUnits\": \"3\",\n            \"decimalAmount\": \"2\",\n            \"decimalNav\": \"4\",\n            \"lastTrxnDate\": \"12-AUG-2024\",\n            \"openingBal\": \"0.000\",\n            \"marketValue\": \"21358.03\",\n            \"nav\": \"4034.3844\",\n            \"closingBalance\": \"5.294\",\n            \"lastNavDate\": \"20-AUG-2024\",\n            \"isDemat\": \"N\",\n            \"assetType\": \"EQUITY\",\n            \"isin\": \"INF204K01323\",\n            \"nomineeStatus\": \"Y\",\n            \"taxStatus\": \"1\",\n            \"costValue\": \"19000.00\"\n        },\n        {\n            \"email\": \"jayantbghosh98@gmail.com\",\n            \"amc\": \"102\",\n            \"amcName\": \"LIC Mutual Fund\",\n            \"folio\": \"3044179146\",\n            \"scheme\": \"FSGPG\",\n            \"schemeName\": \"LIC MF Banking and Financial Services Fund (Formerly IDBI Banking & Financial Services Fund) - Regular Plan-Growth\",\n            \"kycStatus\": \"3\",\n            \"brokerCode\": \"ARN-0016\",\n            \"brokerName\": \"Bluechip Corporate Investment Centre Private limited\",\n            \"rtaCode\": \"KFINTECH\",\n            \"decimalUnits\": \"3\",\n            \"decimalAmount\": \"2\",\n            \"decimalNav\": \"2\",\n            \"lastTrxnDate\": \"01-FEB-2021\",\n            \"openingBal\": \"0.000\",\n            \"marketValue\": \"0.00\",\n            \"nav\": \"15.2500\",\n            \"closingBalance\": \"0.000\",\n            \"lastNavDate\": \"28-JUL-2023\",\n            \"isDemat\": \"N\",\n            \"assetType\": \"EQUITY\",\n            \"isin\": \"INF397L01KI0\",\n            \"nomineeStatus\": \"Y\",\n            \"taxStatus\": \"I\",\n            \"costValue\": \"0.00\"\n        }\n    ]\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success 200",
+          "content": "{\"message\":\"Success\"}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Success",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "/home/frappe/uat-las/config/apidocs/apidoc.py",
+    "groupTitle": "MF_Central",
+    "error": {
+      "fields": {
+        "Error 422": [
+          {
+            "group": "Error 422",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Validation Error",
+            "description": ""
+          },
+          {
+            "group": "Error 422",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": ""
+          },
+          {
+            "group": "Error 422",
+            "type": "String",
+            "optional": false,
+            "field": "errors.field_x",
+            "defaultValue": "field x error message",
+            "description": ""
+          }
+        ],
+        "Error 500": [
+          {
+            "group": "Error 500",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Something went wrong",
+            "description": ""
+          },
+          {
+            "group": "Error 500",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": ""
+          }
+        ],
+        "Error": [
+          {
+            "group": "Error",
+            "type": "String",
+            "optional": false,
+            "field": "errors.field_x",
+            "description": "<p>field_x error message</p>"
+          }
+        ],
+        "Error 401": [
+          {
+            "group": "Error 401",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Unauthorized",
+            "description": ""
+          }
+        ],
+        "Error 403": [
+          {
+            "group": "Error 403",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Forbidden",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error 422",
+          "content": "{\"message\":\"Validation Error\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        },
+        {
+          "title": "Error 500",
+          "content": "{\"message\":\"Something went wrong\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        },
+        {
+          "title": "Error 401",
+          "content": "{\"message\":\"Unauthorized\"}",
+          "type": "json"
+        },
+        {
+          "title": "Error 403",
+          "content": "{\"message\":\"Forbidden\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept",
+            "defaultValue": "application/json",
+            "description": ""
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "{{token}}",
+            "description": "<p>Bearer token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Mobile App Headers",
+          "content": "{\"Accept\":\"application/json\"}",
+          "type": "json"
+        },
+        {
+          "title": "User Authorization Header",
+          "content": "{\"Authorization\":\"Bearer kalsjdfklajsdkfj\"}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
+    "url": "/api/method/lms.user.mf_get_otp",
+    "title": "MF Central Get OTP",
+    "name": "MF_Central_Get_OTP",
+    "group": "MF_Central",
+    "version": "1.0.0",
+    "success": {
+      "examples": [
+        {
+          "title": "success",
+          "content": "{\n    \"message\": \"success\",\n    \"data\": {\n        \"reqId\": 590658478,\n        \"otpRef\": \"ab3b6c14-d392-4ce6-8611-787974b1c0ef\",\n        \"userSubjectReference\": \"\",\n        \"clientRefNo\": \"ac8bdbba-e526-4910-b376-908d69689135\"\n    }\n}",
+          "type": "json"
+        },
+        {
+          "title": "Success 200",
+          "content": "{\"message\":\"Success\"}",
+          "type": "json"
+        }
+      ],
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Success",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "/home/frappe/uat-las/config/apidocs/apidoc.py",
+    "groupTitle": "MF_Central",
+    "error": {
+      "fields": {
+        "Error 422": [
+          {
+            "group": "Error 422",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Validation Error",
+            "description": ""
+          },
+          {
+            "group": "Error 422",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": ""
+          },
+          {
+            "group": "Error 422",
+            "type": "String",
+            "optional": false,
+            "field": "errors.field_x",
+            "defaultValue": "field x error message",
+            "description": ""
+          }
+        ],
+        "Error 500": [
+          {
+            "group": "Error 500",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Something went wrong",
+            "description": ""
+          },
+          {
+            "group": "Error 500",
+            "type": "Object",
+            "optional": false,
+            "field": "errors",
+            "description": ""
+          }
+        ],
+        "Error": [
+          {
+            "group": "Error",
+            "type": "String",
+            "optional": false,
+            "field": "errors.field_x",
+            "description": "<p>field_x error message</p>"
+          }
+        ],
+        "Error 401": [
+          {
+            "group": "Error 401",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Unauthorized",
+            "description": ""
+          }
+        ],
+        "Error 403": [
+          {
+            "group": "Error 403",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "defaultValue": "Forbidden",
+            "description": ""
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error 422",
+          "content": "{\"message\":\"Validation Error\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        },
+        {
+          "title": "Error 500",
+          "content": "{\"message\":\"Something went wrong\",\"errors\":{\"field_x\":\"field_x error message\"}}",
+          "type": "json"
+        },
+        {
+          "title": "Error 401",
+          "content": "{\"message\":\"Unauthorized\"}",
+          "type": "json"
+        },
+        {
+          "title": "Error 403",
+          "content": "{\"message\":\"Forbidden\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Accept",
+            "defaultValue": "application/json",
+            "description": ""
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "defaultValue": "{{token}}",
+            "description": "<p>Bearer token</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Mobile App Headers",
+          "content": "{\"Accept\":\"application/json\"}",
+          "type": "json"
+        },
+        {
+          "title": "User Authorization Header",
+          "content": "{\"Authorization\":\"Bearer kalsjdfklajsdkfj\"}",
           "type": "json"
         }
       ]
@@ -23708,7 +24451,7 @@ var APIDATA = {api: [
   }
 ]}
 var APIPROJECT = {
-  "name": "PaySage LAS API Docs",
+  "name": "Uat_Las API Docs",
   "version": "5.17.5",
   "description": "",
   "sampleUrl": false,
@@ -23716,7 +24459,7 @@ var APIPROJECT = {
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2024-08-02T05:40:07.642Z",
+    "time": "2024-08-22T13:40:05.463Z",
     "url": "https://apidocjs.com",
     "version": "0.25.0"
   }
